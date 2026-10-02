@@ -1,1 +1,3 @@
-# 169544_uwm_analiza_duzych_zbiorow
+Piotr Żuryński 
+numer indeksu: 169544
+przedmiot: Analiza dużych zbiorów danych
