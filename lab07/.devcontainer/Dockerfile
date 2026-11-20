@@ -8,11 +8,13 @@ RUN set -ex; \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /home/spark /opt/spark/work-dir; \
-    chown -R spark:spark /home/spark /opt/spark/work-dir
+    chown -R spark:spark /home/spark /opt/spark/work-dir; \
+    usermod -d /home/spark -s /bin/bash spark
 
 USER spark
 WORKDIR /opt/spark/work-dir/lab_07
 
+ENV HOME=/home/spark
 ENV PATH="/home/spark/.local/bin:${PATH}"
 COPY requirements_delta.txt /tmp/requirements_delta.txt
 RUN pip3 install --no-cache-dir --user -r /tmp/requirements_delta.txt
